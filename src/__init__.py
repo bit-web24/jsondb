@@ -61,7 +61,7 @@ class Database:
                 'operation': 'RENAME_DATABASE'
             }))
         
-        new_database_path = self.database.parent.joinpath(new_database_name + '.json')
+        new_database_path = self.database.parent.joinpath(new_database_name)
         if new_database_path.exists():
             raise DatabaseAlreadyExist(JsondbIo.msg(ErrType.DatabaseAlreadyExist, {
                 'name': new_database_path.name,
